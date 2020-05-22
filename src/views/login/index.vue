@@ -78,7 +78,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss">
 .login-form {
   width: 430px;
   height: 280px;
@@ -88,17 +88,17 @@ export default {
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
   background-color: #fff;
-}
-.login-form:hover {
-  box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
-}
-.login-title {
-  text-align: center;
-}
-.el-input {
-  width: 300px;
-}
-.button-group {
-  text-align: center;
+  &:hover {
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.5);
+  }
+  .login-title {
+    text-align: center;
+  }
+  .el-input {
+    width: 300px;
+  }
+  .button-group {
+    text-align: center;
+  }
 }
 </style>

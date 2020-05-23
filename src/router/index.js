@@ -8,13 +8,21 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/',
-      redirect: '/login'
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import('@/views/login')
+    },
+    {
+      path: '/',
+      component: () => import('@/layout/index'),
+      redirect: '/home',
+      children: [
+        {
+          path: 'home',
+          name: 'home',
+          component: () => import('@/views/home') //首页-应用监控
+        }
+      ]
     }
   ]
 })

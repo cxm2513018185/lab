@@ -67,7 +67,7 @@ export default {
           message: "登录成功",
           type: "success"
         });
-        this.$router.push("/index");
+        this.$router.push("/");
       } else {
         if (username && password) {
           this.$message.error("用户名或密码错误");

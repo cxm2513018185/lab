@@ -25,66 +25,6 @@ export default new Router({
       ]
     },
     {
-      path: '/',  //首页-应用监控
-      component: () => import('@/layout/index'),
-      redirect: '/home',
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('@/views/home')
-        }
-      ]
-    },
-    {
-      path: '/',  //首页-应用监控
-      component: () => import('@/layout/index'),
-      redirect: '/home',
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('@/views/home')
-        }
-      ]
-    },
-    {
-      path: '/',  //首页-应用监控
-      component: () => import('@/layout/index'),
-      redirect: '/home',
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('@/views/home')
-        }
-      ]
-    },
-    {
-      path: '/',  //首页-应用监控
-      component: () => import('@/layout/index'),
-      redirect: '/home',
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('@/views/home')
-        }
-      ]
-    },
-    {
-      path: '/',  //首页-应用监控
-      component: () => import('@/layout/index'),
-      redirect: '/home',
-      children: [
-        {
-          path: 'home',
-          name: 'home',
-          component: () => import('@/views/home')
-        }
-      ]
-    },
-    {
       path: '/laboratory',  //实验室管理
       component: () => import('@/layout/index'),
       redirect: '/laboratory/index',

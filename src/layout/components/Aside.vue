@@ -1,7 +1,6 @@
 <template>
   <el-menu
     router
-    default-active="/home"
     class="el-menu-vertical-demo"
     background-color="#545c64"
     text-color="#fff"

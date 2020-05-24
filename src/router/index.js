@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -15,6 +14,9 @@ export default new Router({
     {
       path: '/',  //首页-应用监控
       component: () => import('@/layout/index'),
+      meta: {
+        title: '应用监控'
+      },
       redirect: '/home',
       children: [
         {
@@ -27,6 +29,9 @@ export default new Router({
     {
       path: '/laboratory',  //实验室管理
       component: () => import('@/layout/index'),
+      meta: {
+        title: '实验室管理'
+      },
       redirect: '/laboratory/index',
       children: [
         {
@@ -39,6 +44,9 @@ export default new Router({
     {
       path: '/recruit',  //招聘管理
       component: () => import('@/layout/index'),
+      meta: {
+        title: '招聘管理'
+      },
       redirect: '/recruit/index',
       children: [
         {
@@ -51,6 +59,9 @@ export default new Router({
     {
       path: '/enroll',  //报名管理
       component: () => import('@/layout/index'),
+      meta: {
+        title: '报名管理'
+      },
       redirect: '/enroll/index',
       children: [
         {
@@ -62,7 +73,9 @@ export default new Router({
     },
     {
       path: '/interview',  //面试管理
-      component: () => import('@/layout/index'),
+      component: () => import('@/layout/index'), meta: {
+        title: '面试管理'
+      },
       redirect: '/interview/index',
       children: [
         {
@@ -75,6 +88,9 @@ export default new Router({
     {
       path: '/work',  //工作管理
       component: () => import('@/layout/index'),
+      meta: {
+        title: '工作管理'
+      },
       redirect: '/work/index',
       children: [
         {
@@ -87,6 +103,9 @@ export default new Router({
     {
       path: '/repair',  //维修管理
       component: () => import('@/layout/index'),
+      meta: {
+        title: '维修管理'
+      },
       redirect: '/repair/index',
       children: [
         {

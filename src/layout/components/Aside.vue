@@ -12,7 +12,7 @@
       <span slot="title">应用监控</span>
     </el-menu-item>
     <el-menu-item index="/laboratory/index">
-      <i class="el-icon-document"></i>
+      <i class="el-icon-setting"></i>
       <span slot="title">实验室管理</span>
     </el-menu-item>
     <el-menu-item index="/recruit/index">

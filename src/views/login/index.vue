@@ -10,15 +10,15 @@
       style="backgroundColor: #f7f7f7;"
     >
       <h2 class="login-title">登录</h2>
-      <el-form-item label="用户名" prop="username">
-        <el-input v-model="form.username"></el-input>
+      <el-form-item label="用户名" prop="account">
+        <el-input v-model="form.account"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
-        <el-input v-model="form.password"></el-input>
+        <el-input type="password" v-model="form.password"></el-input>
       </el-form-item>
       <el-form-item class="button-group">
-        <el-button type="primary" @click="onSubmit">登录</el-button>
-        <el-button>取消</el-button>
+        <el-button type="primary" @click="onSubmit()">登录</el-button>
+        <el-button>注册</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -27,12 +27,12 @@
 <script>
 export default {
   data() {
-    let validateUsername = (rule, value, callback) => {
+    let validateAccount = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入用户名"));
       } else {
-        if (this.form.username !== "") {
-          this.$refs.form.validateField("username");
+        if (this.form.account !== "") {
+          this.$refs.form.validateField("account");
         }
         callback();
       }
@@ -49,30 +49,34 @@ export default {
     };
     return {
       form: {
-        username: "admin",
-        password: 123
+        account: "admin",
+        password: "admin@123"
       },
       rules: {
-        username: [{ validator: validateUsername, trigger: "blur" }],
+        account: [{ validator: validateAccount, trigger: "blur" }],
         password: [{ validator: validatePass, trigger: "blur" }]
       }
     };
   },
   methods: {
     onSubmit() {
-      //   console.log("submit!");
-      let { username, password } = this.form;
-      if (username == "admin" && password == 123) {
-        this.$message({
-          message: "登录成功",
-          type: "success"
+      this.$http
+        .post("user/login", this.form)
+        .then(res => {
+          // console.log(res);
+          if (res.data.code == 20000) {
+            this.$message({
+              message: "登录成功",
+              type: "success"
+            });
+            this.$router.push("/");
+          } else {
+            this.$message.error("用户名或密码错误");
+          }
+        })
+        .catch(err => {
+          console.log(err);
         });
-        this.$router.push("/");
-      } else {
-        if (username && password) {
-          this.$message.error("用户名或密码错误");
-        }
-      }
     }
   }
 };

@@ -10,6 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 Vue.prototype.$http = axios;
+axios.defaults.baseURL = 'http://127.0.0.1:5003/api/'
 
 /* eslint-disable no-new */
 new Vue({

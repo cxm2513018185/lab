@@ -26,6 +26,8 @@
 
 <script>
 import { setToken } from "@/utils/cookie";
+import { login } from "@/api/article";
+
 export default {
   data() {
     let validateAccount = (rule, value, callback) => {
@@ -61,18 +63,38 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.$http
-        .post("user/login", this.form)
+      // this.$http
+      //   .post("user/login", this.form)
+      //   .then(res => {
+      //     console.log(res);
+      //     if (res.data.code == 20000) {
+      //       this.$message({
+      //         message: "登录成功",
+      //         type: "success"
+      //       });
+      //       this.$router.push("/");
+      //       // 存储token的值
+      //       setToken(res.data.data.token);
+      //     } else {
+      //       this.$message.error("用户名或密码错误");
+      //     }
+      //   })
+      //   .catch(err => {
+      //     console.log(err);
+      //   });
+
+      // 使用封装好的接口
+      login(this.form)
         .then(res => {
-          console.log(res);
-          if (res.data.code == 20000) {
+          // console.log(res);
+          if (res.code == 20000) {
             this.$message({
               message: "登录成功",
               type: "success"
             });
             this.$router.push("/");
             // 存储token的值
-            setToken(res.data.data.token);
+            setToken(res.data.token);
           } else {
             this.$message.error("用户名或密码错误");
           }

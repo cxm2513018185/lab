@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { setToken } from "@/utils/cookie";
 export default {
   data() {
     let validateAccount = (rule, value, callback) => {
@@ -63,13 +64,15 @@ export default {
       this.$http
         .post("user/login", this.form)
         .then(res => {
-          // console.log(res);
+          console.log(res);
           if (res.data.code == 20000) {
             this.$message({
               message: "登录成功",
               type: "success"
             });
             this.$router.push("/");
+            // 存储token的值
+            setToken(res.data.data.token);
           } else {
             this.$message.error("用户名或密码错误");
           }

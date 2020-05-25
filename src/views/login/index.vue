@@ -9,9 +9,9 @@
       class="login-form"
       style="backgroundColor: #f7f7f7;"
     >
-      <h2 class="login-title">登录</h2>
-      <el-form-item label="用户名" prop="account">
-        <el-input v-model="form.account"></el-input>
+      <h2 class="login-title">实验室助理工作管理系统</h2>
+      <el-form-item label="用户名" prop="username">
+        <el-input v-model="form.username"></el-input>
       </el-form-item>
       <el-form-item label="密码" prop="password">
         <el-input type="password" v-model="form.password"></el-input>
@@ -30,12 +30,12 @@ import { login } from "@/api/article";
 
 export default {
   data() {
-    let validateAccount = (rule, value, callback) => {
+    let validateUsername = (rule, value, callback) => {
       if (value === "") {
         callback(new Error("请输入用户名"));
       } else {
-        if (this.form.account !== "") {
-          this.$refs.form.validateField("account");
+        if (this.form.username !== "") {
+          this.$refs.form.validateField("username");
         }
         callback();
       }
@@ -52,11 +52,11 @@ export default {
     };
     return {
       form: {
-        account: "admin",
+        username: "admin",
         password: "admin@123"
       },
       rules: {
-        account: [{ validator: validateAccount, trigger: "blur" }],
+        username: [{ validator: validateUsername, trigger: "blur" }],
         password: [{ validator: validatePass, trigger: "blur" }]
       }
     };

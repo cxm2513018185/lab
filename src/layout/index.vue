@@ -1,6 +1,6 @@
 <template>
   <div class="layout-container">
-    <el-container>
+    <el-container class="container">
       <el-aside width="200px">
         <Aside />
       </el-aside>
@@ -33,11 +33,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .layout-container {
+  height: 100%;
+  .container {
+    height: 100%;
+  }
   .el-header {
-    background-color: #e4e4e4;
+    background-color: rgba($color: #000000, $alpha: 0.1);
     color: #333;
     text-align: center;
     line-height: 60px;
+    border-bottom: 1px solid rgb(233, 231, 231);
   }
   .el-breadcrumb {
     height: 60px;

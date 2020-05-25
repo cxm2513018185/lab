@@ -73,7 +73,8 @@ export default new Router({
     },
     {
       path: '/interview',  //面试管理
-      component: () => import('@/layout/index'), meta: {
+      component: () => import('@/layout/index'),
+      meta: {
         title: '面试管理'
       },
       redirect: '/interview/index',

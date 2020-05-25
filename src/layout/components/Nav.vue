@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     getRouter() {
-      console.log(this.$route.matched);
+      // console.log(this.$route.matched);
       this.items = this.$route.matched;
     },
     logout() {

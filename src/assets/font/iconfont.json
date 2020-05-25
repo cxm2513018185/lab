@@ -1,0 +1,58 @@
+{
+  "id": "1841552",
+  "name": "实验室助理工作管理系统",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "677522",
+      "name": "招聘",
+      "font_class": "zhaopin",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "1237031",
+      "name": "应用监控",
+      "font_class": "yingyongjiankong",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "3751346",
+      "name": "报名管理",
+      "font_class": "baomingguanli",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "5718086",
+      "name": "面试管理",
+      "font_class": "mianshiguanli",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6821829",
+      "name": "ico_实验室管理_设备维护查询",
+      "font_class": "ico_shiyanshiguanli_shebeiweihuchaxun",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "7237445",
+      "name": "工作管理",
+      "font_class": "gongzuoguanli",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "8171283",
+      "name": "维修管理",
+      "font_class": "weixiuguanli",
+      "unicode": "e6af",
+      "unicode_decimal": 59055
+    }
+  ]
+}

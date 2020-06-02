@@ -30,7 +30,9 @@ export default {
       this.items = this.$route.matched;
     },
     logout() {
-      this.$router.push("/login");
+      if (confirm("确认退出吗？")) {
+        this.$router.push("/login");
+      }
     }
   },
   created() {
